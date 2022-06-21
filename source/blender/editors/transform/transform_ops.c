@@ -853,7 +853,7 @@ static bool transform_rotate_poll(bContext *C)
   }
 
   ScrArea *area = CTX_wm_area(C);
-  return area && !ELEM(area->spacetype, SPACE_ACTION);
+  return !area || !ELEM(area->spacetype, SPACE_ACTION);
 }
 
 static void TRANSFORM_OT_rotate(struct wmOperatorType *ot)
